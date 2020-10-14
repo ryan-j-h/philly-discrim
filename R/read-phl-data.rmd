@@ -1,0 +1,32 @@
+---
+title: "Read PHL Data"
+author: "Ryan Hastings"
+date: "10/13/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse); library(vroom)
+```
+
+
+```{r, message = F}
+philly <- vroom("phl_data.csv")
+glimpse(philly)
+```
+
+```{r}
+philly2 <- philly %>% 
+  mutate(ctyfips = str_sub(FIPStract, 1, 5))
+
+philly2$ctyfips %>% unique()
+```
+
+
+Counties/FIPS codes:
+Bucks - 42017;
+Chester - 42029;
+Delaware - 42045;
+Montgomery - 42091;
+Philadelphia - 42101
