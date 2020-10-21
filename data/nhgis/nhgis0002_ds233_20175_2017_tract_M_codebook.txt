@@ -1,0 +1,321 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0002_ds233_20175_2017_tract_M'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2013-2017
+Geographic level: Census Tract (by State--County)
+Dataset:          2017 American Community Survey: 5-Year Data [2013-2017, Block Groups & Larger Areas]
+   NHGIS code:    2013_2017_ACS5a
+   NHGIS ID:      ds233
+Breakdown(s):     Geographic Subarea:
+                     Total area (00)
+Data type(s):     (M) Margins of error
+ 
+Tables:
+ 
+1. Median Age by Sex
+   Universe:    Total population
+   Source code: B01002
+   NHGIS code:  AHYR
+ 
+2. Total Population
+   Universe:    Total population
+   Source code: B01003
+   NHGIS code:  AHY1
+ 
+3. Race
+   Universe:    Total population
+   Source code: B02001
+   NHGIS code:  AHY2
+ 
+4. Hispanic or Latino Origin
+   Universe:    Total population
+   Source code: B03003
+   NHGIS code:  AHZB
+ 
+5. Educational Attainment for the Population 25 Years and Over
+   Universe:    Population 25 years and over
+   Source code: B15003
+   NHGIS code:  AH04
+ 
+6. Median Household Income in the Past 12 Months (in 2017 Inflation-Adjusted Dollars)
+   Universe:    Households
+   Source code: B19013
+   NHGIS code:  AH1P
+ 
+7. Occupancy Status
+   Universe:    Housing units
+   Source code: B25002
+   NHGIS code:  AH36
+ 
+8. Tenure
+   Universe:    Occupied housing units
+   Source code: B25003
+   NHGIS code:  AH37
+ 
+9. Median Gross Rent (Dollars)
+   Universe:    Renter-occupied housing units paying cash rent
+   Source code: B25064
+   NHGIS code:  AH5R
+ 
+10. Median Value (Dollars)
+    Universe:    Owner-occupied housing units
+    Source code: B25077
+    NHGIS code:  AH53
+ 
+11. Price Asked
+    Universe:    Vacant-for-sale-only and sold, not occupied housing units
+    Source code: B25085
+    NHGIS code:  AH6A
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+        GISJOIN:     GIS Join Match Code
+        YEAR:        Data File Year
+        REGIONA:     Region Code
+        DIVISIONA:   Division Code
+        STATE:       State Name
+        STATEA:      State Code
+        COUNTY:      County Name
+        COUNTYA:     County Code
+        COUSUBA:     County Subdivision Code
+        PLACEA:      Place Code
+        TRACTA:      Census Tract Code
+        BLKGRPA:     Block Group Code
+        CONCITA:     Consolidated City Code
+        AIANHHA:     American Indian Area/Alaska Native Area/Hawaiian Home Land Code
+        RES_ONLYA:   American Indian Area/Alaska Native Area (Reservation or Statistical Entity Only) Code
+        TRUSTA:      American Indian Area (Off-Reservation Trust Land Only)/Hawaiian Home Land Code
+        AITSCEA:     Tribal Subdivision/Remainder Code
+        ANRCA:       Alaska Native Regional Corporation Code
+        CBSAA:       Metropolitan Statistical Area/Micropolitan Statistical Area Code
+        CSAA:        Combined Statistical Area Code
+        METDIVA:     Metropolitan Division Code
+        NECTAA:      New England City and Town Area Code
+        CNECTAA:     Combined New England City and Town Area Code
+        NECTADIVA:   New England City and Town Area Division Code
+        UAA:         Urban Area Code
+        CDCURRA:     Congressional District (2017-2019, 115th Congress) Code
+        SLDUA:       State Legislative District (Upper Chamber) Code
+        SLDLA:       State Legislative District (Lower Chamber) Code
+        ZCTA5A:      5-Digit ZIP Code Tabulation Area Code
+        SUBMCDA:     Subminor Civil Division Code
+        SDELMA:      School District (Elementary)/Remainder Code
+        SDSECA:      School District (Secondary)/Remainder Code
+        SDUNIA:      School District (Unified)/Remainder Code
+        PUMA5A:      Public Use Microdata Sample Area (PUMA) Code
+        NAME:        Area Name
+        BTTRA:       Tribal Census Tract Code
+        BTBGA:       Tribal Block Group Code
+ 
+Data Type (M):
+    Margins of error
+ 
+    Table 1:     Median Age by Sex
+    Universe:    Total population
+    Source code: B01002
+    NHGIS code:  AHYR
+        AHYRM001:    Median age: Total
+        AHYRM002:    Median age: Male
+        AHYRM003:    Median age: Female
+ 
+    Table 2:     Total Population
+    Universe:    Total population
+    Source code: B01003
+    NHGIS code:  AHY1
+        AHY1M001:    Total
+ 
+    Table 3:     Race
+    Universe:    Total population
+    Source code: B02001
+    NHGIS code:  AHY2
+        AHY2M001:    Total
+        AHY2M002:    White alone
+        AHY2M003:    Black or African American alone
+        AHY2M004:    American Indian and Alaska Native alone
+        AHY2M005:    Asian alone
+        AHY2M006:    Native Hawaiian and Other Pacific Islander alone
+        AHY2M007:    Some other race alone
+        AHY2M008:    Two or more races
+        AHY2M009:    Two or more races: Two races including Some other race
+        AHY2M010:    Two or more races: Two races excluding Some other race, and three or more races
+ 
+    Table 4:     Hispanic or Latino Origin
+    Universe:    Total population
+    Source code: B03003
+    NHGIS code:  AHZB
+        AHZBM001:    Total
+        AHZBM002:    Not Hispanic or Latino
+        AHZBM003:    Hispanic or Latino
+ 
+    Table 5:     Educational Attainment for the Population 25 Years and Over
+    Universe:    Population 25 years and over
+    Source code: B15003
+    NHGIS code:  AH04
+        AH04M001:    Total
+        AH04M002:    No schooling completed
+        AH04M003:    Nursery school
+        AH04M004:    Kindergarten
+        AH04M005:    1st grade
+        AH04M006:    2nd grade
+        AH04M007:    3rd grade
+        AH04M008:    4th grade
+        AH04M009:    5th grade
+        AH04M010:    6th grade
+        AH04M011:    7th grade
+        AH04M012:    8th grade
+        AH04M013:    9th grade
+        AH04M014:    10th grade
+        AH04M015:    11th grade
+        AH04M016:    12th grade, no diploma
+        AH04M017:    Regular high school diploma
+        AH04M018:    GED or alternative credential
+        AH04M019:    Some college, less than 1 year
+        AH04M020:    Some college, 1 or more years, no degree
+        AH04M021:    Associate's degree
+        AH04M022:    Bachelor's degree
+        AH04M023:    Master's degree
+        AH04M024:    Professional school degree
+        AH04M025:    Doctorate degree
+ 
+    Table 6:     Median Household Income in the Past 12 Months (in 2017 Inflation-Adjusted Dollars)
+    Universe:    Households
+    Source code: B19013
+    NHGIS code:  AH1P
+        AH1PM001:    Median household income in the past 12 months (in 2017 inflation-adjusted dollars)
+ 
+    Table 7:     Occupancy Status
+    Universe:    Housing units
+    Source code: B25002
+    NHGIS code:  AH36
+        AH36M001:    Total
+        AH36M002:    Occupied
+        AH36M003:    Vacant
+ 
+    Table 8:     Tenure
+    Universe:    Occupied housing units
+    Source code: B25003
+    NHGIS code:  AH37
+        AH37M001:    Total
+        AH37M002:    Owner occupied
+        AH37M003:    Renter occupied
+ 
+    Table 9:     Median Gross Rent (Dollars)
+    Universe:    Renter-occupied housing units paying cash rent
+    Source code: B25064
+    NHGIS code:  AH5R
+        AH5RM001:    Median gross rent
+ 
+    Table 10:    Median Value (Dollars)
+    Universe:    Owner-occupied housing units
+    Source code: B25077
+    NHGIS code:  AH53
+        AH53M001:    Median value (dollars)
+ 
+    Table 11:    Price Asked
+    Universe:    Vacant-for-sale-only and sold, not occupied housing units
+    Source code: B25085
+    NHGIS code:  AH6A
+        AH6AM001:    Total
+        AH6AM002:    Less than $10,000
+        AH6AM003:    $10,000 to $14,999
+        AH6AM004:    $15,000 to $19,999
+        AH6AM005:    $20,000 to $24,999
+        AH6AM006:    $25,000 to $29,999
+        AH6AM007:    $30,000 to $34,999
+        AH6AM008:    $35,000 to $39,999
+        AH6AM009:    $40,000 to $49,999
+        AH6AM010:    $50,000 to $59,999
+        AH6AM011:    $60,000 to $69,999
+        AH6AM012:    $70,000 to $79,999
+        AH6AM013:    $80,000 to $89,999
+        AH6AM014:    $90,000 to $99,999
+        AH6AM015:    $100,000 to $124,999
+        AH6AM016:    $125,000 to $149,999
+        AH6AM017:    $150,000 to $174,999
+        AH6AM018:    $175,000 to $199,999
+        AH6AM019:    $200,000 to $249,999
+        AH6AM020:    $250,000 to $299,999
+        AH6AM021:    $300,000 to $399,999
+        AH6AM022:    $400,000 to $499,999
+        AH6AM023:    $500,000 to $749,999
+        AH6AM024:    $750,000 to $999,999
+        AH6AM025:    $1,000,000 to $1,499,999
+        AH6AM026:    $1,500,000 to $1,999,999
+        AH6AM027:    $2,000,000 or more
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Steven Manson, Jonathan Schroeder, David Van Riper, Tracy Kugler, and Steven Ruggles. 
+        IPUMS National Historical Geographic Information System: Version 15.0 
+        [dataset]. Minneapolis, MN: IPUMS. 2020. 
+        http://doi.org/10.18128/D050.V15.0
+
+    * Publications and research reports employing school attendance areas data 
+      (either tabular or GIS) must cite it appropriately. The citation should 
+      include the following:
+
+        The College of William and Mary and the Minnesota Population Center.
+        School Attendance Boundary Information System (SABINS): Version 1.0.
+        Minneapolis, MN: University of Minnesota 2011.
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+    * If possible, citations involving school attendance areas should also include
+      the URL for the SABINS site:
+
+        http://www.sabinsdata.org/.
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

@@ -1,0 +1,328 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'nhgis0002_ds146_2000_tract'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2000
+Geographic level: Census Tract (by State--County)
+Dataset:          2000 Census: SF 1a - 100% Data [Areas Larger Than Block Groups]
+   NHGIS code:    2000_SF1a
+   NHGIS ID:      ds146
+Breakdown(s):     Geographic Subarea:
+                     Total area (00)
+ 
+Tables:
+ 
+1. Total Population
+   Universe:    Persons
+   Source code: NP001A
+   NHGIS code:  FL5
+ 
+2. Population of One Race by Race
+   Universe:    Persons of One Race
+   Source code: NP003B
+   NHGIS code:  FL9
+ 
+3. Population of Two or More Races by Race Combination
+   Universe:    Persons of Two or More Races
+   Source code: NP003D
+   NHGIS code:  FMB
+ 
+4. Population by Hispanic or Latino and Not Hispanic or Latino
+   Universe:    Persons
+   Source code: NP004A
+   NHGIS code:  FMC
+ 
+5. Total Population 18 Years and Over
+   Universe:    Persons 18 Years and Over
+   Source code: NP005A
+   NHGIS code:  FMH
+ 
+6. Population by Race
+   Universe:    Persons
+   Source code: NP007A
+   NHGIS code:  FMR
+ 
+7. Population by Sex
+   Universe:    Persons
+   Source code: NP012A
+   NHGIS code:  FMY
+ 
+8. Median Age
+   Universe:    Persons
+   Source code: NP013A
+   NHGIS code:  FM6
+ 
+9. Total Population Under 18 Years
+   Universe:    Persons Under 18 Years of Age
+   Source code: NP028A
+   NHGIS code:  FPQ
+ 
+10. Total Population 65 Years and Over
+    Universe:    Persons 65 Years and Over
+    Source code: NP030A
+    NHGIS code:  FQI
+ 
+11. Housing Units by Occupancy Status
+    Universe:    Housing Units
+    Source code: NH003A
+    NHGIS code:  FKL
+ 
+12. Occupied Housing Units by Tenure
+    Universe:    Occupied Housing Units
+    Source code: NH004B
+    NHGIS code:  FKN
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Context Fields 
+        GISJOIN:     GIS Join Match Code
+        YEAR:        Data File Year
+        REGIONA:     Region Code
+        DIVISIONA:   Division Code
+        STATE:       State Name
+        STATEA:      State Code
+        COUNTY:      County Name
+        COUNTYA:     County Code
+        CTY_SUBA:    County Subdivision Code
+        PLACEA:      Place Code
+        TRACTA:      Census Tract Code
+        TRBL_CTA:    Tribal Census Tract Code
+        BLCK_GRPA:   Block Group Code
+        TRBL_BGA:    Tribal Block Group Code
+        C_CITYA:     Consolidated City Code
+        AIANHHA:     American Indian Area/Alaska Native Area/Hawaiian Home Land Code
+        RES_ONLYA:   American Indian Reservation [excluding trust lands] Code
+        TRUSTA:      American Indian Reservation [trust lands only] Code
+        TRBL_SUBA:   Tribal Subdivision Code
+        ANRCA:       Alaska Native Regional Corporation Code
+        MSA_CMSAA:   Metropolitan Statistical Area/Consolidated Metropolitan Statistical Area Code
+        PMSAA:       Primary Metropolitan Statistical Area Code
+        NECMAA:      New England County Metropolitan Area Code
+        URB_AREAA:   Urban Area Code
+        CD106A:      Congressional District (106th) Code
+        CD108A:      Congressional District (108th) Code
+        CD109A:      Congressional District (109th) Code
+        ZIP3A:       3-Digit Zip Code Tabulation Area Code
+        ZCTAA:       5-Digit Zip Code Tabulation Area Code
+        NAME:        Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator
+ 
+Breakdown:
+    Geographic Subarea: Total area (00)
+ 
+    Table 1:     Total Population
+    Universe:    Persons
+    Source code: NP001A
+    NHGIS code:  FL5
+        FL5001:      Total
+ 
+    Table 2:     Population of One Race by Race
+    Universe:    Persons of One Race
+    Source code: NP003B
+    NHGIS code:  FL9
+        FL9001:      White alone
+        FL9002:      Black or African American alone
+        FL9003:      American Indian and Alaska Native alone
+        FL9004:      Asian alone
+        FL9005:      Native Hawaiian and Other Pacific Islander alone
+        FL9006:      Some other race alone
+ 
+    Table 3:     Population of Two or More Races by Race Combination
+    Universe:    Persons of Two or More Races
+    Source code: NP003D
+    NHGIS code:  FMB
+        FMB001:      Population of Two Races: White; Black or African American
+        FMB002:      Population of Two Races: White; American Indian and Alaska Native
+        FMB003:      Population of Two Races: White; Asian
+        FMB004:      Population of Two Races: White; Native Hawaiian and Other Pacific Islander
+        FMB005:      Population of Two Races: White; some other race
+        FMB006:      Population of Two Races: Black or African American; American Indian and Alaska Native
+        FMB007:      Population of Two Races: Black or African American; Asian
+        FMB008:      Population of Two Races: Black or African American; Native Hawaiian and Other Pacific Islander
+        FMB009:      Population of Two Races: Black or African American; some other race
+        FMB010:      Population of Two Races: American Indian and Alaska Native; Asian
+        FMB011:      Population of Two Races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        FMB012:      Population of Two Races: American Indian and Alaska Native; some other race
+        FMB013:      Population of Two Races: Asian; Native Hawaiian and Other Pacific Islander
+        FMB014:      Population of Two Races: Asian; some other race
+        FMB015:      Population of Two Races: Native Hawaiian and Other Pacific Islander; some other race
+        FMB016:      Population of Three Races: White; Black or African American; American Indian and Alaska Native
+        FMB017:      Population of Three Races: White; Black or African American; Asian
+        FMB018:      Population of Three Races: White; Black or African American; Native Hawaiian and Other Pacific Islander
+        FMB019:      Population of Three Races: White; Black or African American; some other race
+        FMB020:      Population of Three Races: White; American Indian and Alaska Native; Asian
+        FMB021:      Population of Three Races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        FMB022:      Population of Three Races: White; American Indian and Alaska Native; some other race
+        FMB023:      Population of Three Races: White; Asian; Native Hawaiian and Other Pacific Islander
+        FMB024:      Population of Three Races: White; Asian; some other race
+        FMB025:      Population of Three Races: White; Native Hawaiian and Other Pacific Islander; some other race
+        FMB026:      Population of Three Races: Black or African American; American Indian and Alaska Native; Asian
+        FMB027:      Population of Three Races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        FMB028:      Population of Three Races: Black or African American; American Indian and Alaska Native; some other race
+        FMB029:      Population of Three Races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        FMB030:      Population of Three Races: Black or African American; Asian; some other race
+        FMB031:      Population of Three Races: Black or African American; Native Hawaiian and Other Pacific Islander; some other race
+        FMB032:      Population of Three Races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        FMB033:      Population of Three Races: American Indian and Alaska Native; Asian; some other race
+        FMB034:      Population of Three Races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; some other race
+        FMB035:      Population of Three Races: Asian; Native Hawaiian and Other Pacific Islander; some other race
+        FMB036:      Population of Four Races: White; Black or African American; American Indian and Alaska Native; Asian
+        FMB037:      Population of Four Races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        FMB038:      Population of Four Races: White; Black or African American; American Indian and Alaska Native; some other race
+        FMB039:      Population of Four Races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        FMB040:      Population of Four Races: White; Black or African American; Asian; some other race
+        FMB041:      Population of Four Races: White; Black or African American; Native Hawaiian and Other Pacific Islander; some other race
+        FMB042:      Population of Four Races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        FMB043:      Population of Four Races: White; American Indian and Alaska Native; Asian; some other race
+        FMB044:      Population of Four Races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; some other race
+        FMB045:      Population of Four Races: White; Asian; Native Hawaiian and Other Pacific Islander; some other race
+        FMB046:      Population of Four Races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        FMB047:      Population of Four Races: Black or African American; American Indian and Alaska Native; Asian; some other race
+        FMB048:      Population of Four Races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; some other race
+        FMB049:      Population of Four Races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander; some other race
+        FMB050:      Population of Four Races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; some other race
+        FMB051:      Population of Five Races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        FMB052:      Population of Five Races: White; Black or African American; American Indian and Alaska Native; Asian; some other race
+        FMB053:      Population of Five Races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; some other race
+        FMB054:      Population of Five Races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; some other race
+        FMB055:      Population of Five Races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; some other race
+        FMB056:      Population of Five Races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; some other race
+        FMB057:      Population of Six Races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; some other race
+ 
+    Table 4:     Population by Hispanic or Latino and Not Hispanic or Latino
+    Universe:    Persons
+    Source code: NP004A
+    NHGIS code:  FMC
+        FMC001:      Hispanic or Latino
+        FMC002:      Not Hispanic or Latino
+ 
+    Table 5:     Total Population 18 Years and Over
+    Universe:    Persons 18 Years and Over
+    Source code: NP005A
+    NHGIS code:  FMH
+        FMH001:      Total
+ 
+    Table 6:     Population by Race
+    Universe:    Persons
+    Source code: NP007A
+    NHGIS code:  FMR
+        FMR001:      White alone
+        FMR002:      Black or African American alone
+        FMR003:      American Indian and Alaska Native alone
+        FMR004:      Asian alone
+        FMR005:      Native Hawaiian and Other Pacific Islander alone
+        FMR006:      Some other race alone
+        FMR007:      Two or more races
+ 
+    Table 7:     Population by Sex
+    Universe:    Persons
+    Source code: NP012A
+    NHGIS code:  FMY
+        FMY001:      Male
+        FMY002:      Female
+ 
+    Table 8:     Median Age
+    Universe:    Persons
+    Source code: NP013A
+    NHGIS code:  FM6
+        FM6001:      Median age
+ 
+    Table 9:     Total Population Under 18 Years
+    Universe:    Persons Under 18 Years of Age
+    Source code: NP028A
+    NHGIS code:  FPQ
+        FPQ001:      Total
+ 
+    Table 10:    Total Population 65 Years and Over
+    Universe:    Persons 65 Years and Over
+    Source code: NP030A
+    NHGIS code:  FQI
+        FQI001:      Total
+ 
+    Table 11:    Housing Units by Occupancy Status
+    Universe:    Housing Units
+    Source code: NH003A
+    NHGIS code:  FKL
+        FKL001:      Occupied
+        FKL002:      Vacant
+ 
+    Table 12:    Occupied Housing Units by Tenure
+    Universe:    Occupied Housing Units
+    Source code: NH004B
+    NHGIS code:  FKN
+        FKN001:      Owner occupied
+        FKN002:      Renter occupied
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Steven Manson, Jonathan Schroeder, David Van Riper, Tracy Kugler, and Steven Ruggles. 
+        IPUMS National Historical Geographic Information System: Version 15.0 
+        [dataset]. Minneapolis, MN: IPUMS. 2020. 
+        http://doi.org/10.18128/D050.V15.0
+
+    * Publications and research reports employing school attendance areas data 
+      (either tabular or GIS) must cite it appropriately. The citation should 
+      include the following:
+
+        The College of William and Mary and the Minnesota Population Center.
+        School Attendance Boundary Information System (SABINS): Version 1.0.
+        Minneapolis, MN: University of Minnesota 2011.
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+    * If possible, citations involving school attendance areas should also include
+      the URL for the SABINS site:
+
+        http://www.sabinsdata.org/.
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

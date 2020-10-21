@@ -1,0 +1,178 @@
+---
+title: "Get Census Data"
+author: "Ryan Hastings"
+date: "10/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse); library(tidycensus); library(janitor); library(sf)
+library(tigris); library(sp)
+```
+
+```{r input-key, eval = F}
+key <- "0ff063c9a1ab846e58d33668b228b5d68b989a27"
+census_api_key(key, install = T, overwrite = T)
+```
+
+Variables: https://api.census.gov/data/2000/dec/sf1/variables.html
+```{r var-library, eval = F}
+var_library <- load_variables(2000, dataset = "sf1", cache = T)
+```
+
+```{r shapes, message = F}
+shapes <- tracts(state = 'PA', county = c("Bucks", "Chester", "Delaware", "Montgomery", "Philadelphia")) %>% 
+   clean_names()
+```
+
+```{r cache-geom}
+options(tigris_use_cache = T)
+```
+
+```{r create-functions}
+pull_vars <- function(vars, 
+                      counties = c("Bucks", "Chester", "Delaware", "Montgomery", 
+                                   "Philadelphia"),
+                      geom = F){
+   get_decennial(geography = "tract",
+                        variables = vars,
+                        sumfile = "sf1",
+                        year = 2000, 
+                        state = "PA",
+                        county = counties,
+                        geometry =  geom)
+}
+
+# Example without function
+# census_tenure_raw <- get_decennial(geography = "tract",
+#                         variables = c(
+#                            tenure_total = "H004001",
+#                            tenure_owner = "H004002",
+#                            tenure_renter = "H004003"
+#                         ),
+#                         sumfile = "sf1",
+#                         year = 2000, 
+#                         state = "PA",
+#                         county = counties,
+#                         geometry =  T)
+
+clean <- function(data){
+   data %>% 
+      janitor::clean_names() %>%
+      as_tibble() %>% # convert from spatial object to data table
+      pivot_wider(names_from = variable, values_from = value)
+}
+```
+
+
+```{r pull-data, message = F}
+counties <- c("Bucks", "Chester", "Delaware", "Montgomery", "Philadelphia")
+
+census_tenure <- pull_vars(c(
+   tenure_total = "H004001",
+   tenure_vacant = "H003002",
+   tenure_occupied = "H003003",
+   tenure_owner = "H004002",
+   tenure_renter = "H004003"
+)) %>% clean()
+
+census_race <- pull_vars(c(
+   race_total = "H006001",
+   race_white_only = "H006002",
+   race_black_only = "H006003",
+   race_white_any = "H008002",
+   race_black_any = "H008003"
+)) %>% clean()
+
+census_ed <- ""
+
+census_inc_val <- ""
+```
+
+
+
+```{r join-shape-census}
+
+census_race2 <- census_race %>% 
+   mutate(geoid = case_when(
+      str_length(geoid) == 9 ~ paste0(geoid, "00"),
+      TRUE ~ geoid
+   ))
+   
+
+test <- full_join(census_race2, shapes, by = "geoid") %>% 
+   st_as_sf()
+
+plot(test["race_black_only"])
+
+test2 <- test %>% 
+   filter(countyfp == 101)
+   
+plot(test2["race_black_only"])
+```
+
+
+
+
+
+
+
+
+
+
+
+
+```{r old-code, eval = F}
+   # pull acs data using tidycensus
+    get_acs(geography = "block group", 
+            variables = c(n_total = "B02001_001", n_white = "B02001_002",
+                          n_black = "B02001_003", n_natam = "B02001_004",
+                          n_hisp  = "B03003_003", median_hh_inc = "B19013_001",
+                          n_inc_less10k = "B19001_002", 
+                          n_inc_10k_14k = "B19001_003",
+                          n_inc_15k_19k = "B19001_004"),
+            county = "Chester",
+            state = "PA",
+            geometry = TRUE) %>%
+      janitor::clean_names() %>%
+      as_tibble() %>% # convert from spatial object to data table
+      select(-moe) %>% # select only point estimates
+      
+      # make a column for each variable
+      pivot_wider(names_from = variable, values_from = estimate) %>%
+      
+      # calculate percent variables
+      mutate(pct_white = n_white/n_total,
+             pct_black = n_black/n_total,
+             pct_natam = n_natam/n_total,
+             pct_hisp = n_hisp/n_total,
+             pct_inc_less10k = n_inc_less10k/n_total,
+             pct_inc_10k_14k = n_inc_10k_14k/n_total,
+             pct_inc_15k_19k = n_inc_15k_19k/n_total,
+             pct_inc_less20k = (n_inc_less10k + n_inc_10k_14k + 
+                                  n_inc_15k_19k)/n_total) %>%
+      
+      # join with rsei data
+      # inner_join(rsei,
+      #            .,
+      #            by = c("blckgrp" = "geoid")) %>% 
+      
+      # return to a spatial object
+      sf::st_as_sf() %>% 
+      sf::st_transform(4326)
+```
+
+
+```{r}
+test <- st_as_sf(census_race) %>% 
+   mutate(geoid = case_when(
+      str_length(geoid)== 9 ~ paste0(geoid, "00"),
+      TRUE ~ geoid
+   ))
+
+plot(test["race_total"])
+   
+```
+
+

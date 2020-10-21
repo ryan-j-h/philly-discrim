@@ -7,12 +7,12 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse); library(vroom); library(janitor)
+library(tidyverse); library(vroom); library(janitor); library(sf); library(tigris)
 ```
 
 
 ```{r, message = F}
-philly <- vroom("../data/phl_data.csv")
+philly <- vroom("../data/phl_data.csv") %>% rename(fips_tract = FIPStract)
 glimpse(philly)
 ```
 
@@ -32,22 +32,26 @@ Montgomery - 42091;
 Philadelphia - 42101
 
 
-```{r, message = F, cache = T}
-chesco <- read_delim("../data/fips-42029-UniversityofPA_Bulk_Tax.txt", 
-                     delim = "|")
+```{r cache = T, message = F}
+shapes <- tracts(state = 'PA', county = c("Bucks", "Chester", "Delaware", "Montgomery", "Philadelphia")) %>% 
+  clean_names() %>% 
+  mutate(fips_tract = as.numeric(paste0(statefp, countyfp, tractce)))
 ```
 
 ```{r}
-test <- read.delim("../data/fips-42029-UniversityofPA_Bulk_Tax.txt", sep = "|")
+philly_tracts <- full_join(philly, shapes) %>%
+  mutate(included = if_else(is.na(p_white), 0, 1)) %>% 
+  st_as_sf()
 ```
 
 
 ```{r}
-glimpse(chesco)
+ggplot(philly_tracts) +
+  geom_sf(aes(fill = as.factor(included))) +
+  scale_fill_manual(values = c("#6EA9E2", "#EE5ED1")) +
+  labs(title = "Tracts Included in Christensen & Timmins (2020)", fill = "Included") +
+  theme_bw()
 ```
 
-```{r}
-hastings <- chesco2 %>% 
-  filter(owner_1_last_name == "HASTINGS" | seller_last_name == "HASTINGS")
-```
+
 
