@@ -1,5 +1,5 @@
 ---
-title: "Read PHL Data"
+title: "Read Data"
 author: "Ryan Hastings"
 date: "10/13/2020"
 output: html_document
@@ -7,12 +7,12 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse); library(vroom)
+library(tidyverse); library(vroom); library(janitor)
 ```
 
 
 ```{r, message = F}
-philly <- vroom("phl_data.csv")
+philly <- vroom("../data/phl_data.csv")
 glimpse(philly)
 ```
 
@@ -30,3 +30,24 @@ Chester - 42029;
 Delaware - 42045;
 Montgomery - 42091;
 Philadelphia - 42101
+
+
+```{r, message = F, cache = T}
+chesco <- read_delim("../data/fips-42029-UniversityofPA_Bulk_Tax.txt", 
+                     delim = "|")
+```
+
+```{r}
+test <- read.delim("../data/fips-42029-UniversityofPA_Bulk_Tax.txt", sep = "|")
+```
+
+
+```{r}
+glimpse(chesco)
+```
+
+```{r}
+hastings <- chesco2 %>% 
+  filter(owner_1_last_name == "HASTINGS" | seller_last_name == "HASTINGS")
+```
+
