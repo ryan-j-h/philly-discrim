@@ -1,0 +1,29 @@
+---
+title: "Combine Philly and Census Data"
+author: "Ryan Hastings"
+date: "10/21/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r read-rds}
+phl <- read_rds("../data/philly_tracts.rds")
+
+census <- read_rds("../data/census.rds") %>% 
+  mutate(fips_tract = as.numeric(paste0(statea, countya, tracta)))
+```
+
+```{r merge, message = F}
+discrim <- full_join(phl, census) %>% st_as_sf()
+```
+
+
+```{r}
+plot(discrim["presp_white"])
+plot(discrim["presp_black"])
+```
+

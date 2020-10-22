@@ -18,7 +18,7 @@ glimpse(philly)
 
 ```{r}
 philly2 <- philly %>% 
-  mutate(ctyfips = str_sub(FIPStract, 1, 5))
+  mutate(ctyfips = str_sub(fips_tract, 1, 5))
 
 philly2$ctyfips %>% unique()
 ```
@@ -42,6 +42,10 @@ shapes <- tracts(state = 'PA', county = c("Bucks", "Chester", "Delaware", "Montg
 philly_tracts <- full_join(philly, shapes) %>%
   mutate(included = if_else(is.na(p_white), 0, 1)) %>% 
   st_as_sf()
+```
+
+```{r}
+write_rds(philly_tracts, "../data/philly_tracts.rds")
 ```
 
 
