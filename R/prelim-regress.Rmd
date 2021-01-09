@@ -1,0 +1,26 @@
+---
+title: "Preliminary Regressions"
+author: "Ryan Hastings"
+date: "10/22/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse);library(lmtest); library(sandwich); library(knitr)
+```
+
+```{r}
+discrim <- read_rds("../data/discrim.rds")
+```
+
+```{r}
+black <- lm(presp_black ~ gentrify_composite + med_hh_inc_2017 + med_gross_rent_2017 + p_white + tract_high_schol_score + tract_assault + p_higherthan_highschool, data = discrim)
+summary(black)
+coeftest(black, vcov = vcovHC(black, type="HC1")) %>% 
+  kable(format = "markdown")
+
+white <- lm(presp_white ~ gentrify_composite + med_hh_inc_2017 + med_gross_rent_2017 + p_white + tract_high_schol_score + tract_assault + p_higherthan_highschool, data = discrim)
+coeftest(white, vcov = vcovHC(white, type="HC1"))
+```
+

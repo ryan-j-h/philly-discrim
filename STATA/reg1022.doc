@@ -1,0 +1,38 @@
+{\rtf1\fs24
+\trowd\trgaph75\trleft-75\intbl\trqc\clbrdrt\brdrs\cellx4320\clbrdrt\brdrs\cellx6048\clbrdrt\brdrs\cellx7776\clbrdrt\brdrs\cellx9504\clbrdrt\brdrs\cellx11232\clbrdrt\brdrs\cellx12960\clbrdrt\brdrs\cellx14688\clbrdrt\brdrs\cellx16416\clbrdrt\brdrs\cellx18144
+\ql \cell\qc (1)\cell\qc (2)\cell\qc (3)\cell\qc (4)\cell\qc (5)\cell\qc (6)\cell\qc (7)\cell\qc (8)\cell\row
+\trowd\trgaph75\trleft-75\trqc\cellx4320\cellx6048\cellx7776\cellx9504\cellx11232\cellx12960\cellx14688\cellx16416\cellx18144
+\trowd\trgaph75\trleft-75\trqc\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx6048\clbrdrb\brdrs\cellx7776\clbrdrb\brdrs\cellx9504\clbrdrb\brdrs\cellx11232\clbrdrb\brdrs\cellx12960\clbrdrb\brdrs\cellx14688\clbrdrb\brdrs\cellx16416\clbrdrb\brdrs\cellx18144
+\ql VARIABLES\cell\qc presp_white\cell\qc presp_black\cell\qc presp_white\cell\qc presp_black\cell\qc presp_white\cell\qc presp_black\cell\qc presp_white\cell\qc presp_black\cell\row
+\trowd\trgaph75\trleft-75\trqc\cellx4320\cellx6048\cellx7776\cellx9504\cellx11232\cellx12960\cellx14688\cellx16416\cellx18144
+\ql \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\row
+\ql gentrify_composite\cell\qc -0.0303\cell\qc -0.0185\cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\row
+\ql \cell\qc (0.0310)\cell\qc (0.0275)\cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\row
+\ql med_value_owner_occ_2017\cell\qc 1.46e-07\cell\qc 2.26e-07***\cell\qc 1.38e-07\cell\qc 2.27e-07***\cell\qc 1.47e-07\cell\qc 2.32e-07***\cell\qc 1.47e-07\cell\qc 2.27e-07***\cell\row
+\ql \cell\qc (9.75e-08)\cell\qc (7.33e-08)\cell\qc (9.83e-08)\cell\qc (7.40e-08)\cell\qc (9.82e-08)\cell\qc (7.34e-08)\cell\qc (9.81e-08)\cell\qc (7.36e-08)\cell\row
+\ql p_white\cell\qc 0.0196\cell\qc 0.0604*\cell\qc 0.0166\cell\qc 0.0590*\cell\qc 0.0178\cell\qc 0.0573*\cell\qc 0.0156\cell\qc 0.0572*\cell\row
+\ql \cell\qc (0.0328)\cell\qc (0.0308)\cell\qc (0.0333)\cell\qc (0.0310)\cell\qc (0.0333)\cell\qc (0.0308)\cell\qc (0.0332)\cell\qc (0.0310)\cell\row
+\ql tract_assault_all\cell\qc -7.90e-05\cell\qc 0.000351**\cell\qc -5.80e-05\cell\qc 0.000357**\cell\qc -7.53e-05\cell\qc 0.000375**\cell\qc -6.98e-05\cell\qc 0.000357**\cell\row
+\ql \cell\qc (0.000151)\cell\qc (0.000143)\cell\qc (0.000152)\cell\qc (0.000144)\cell\qc (0.000153)\cell\qc (0.000145)\cell\qc (0.000151)\cell\qc (0.000143)\cell\row
+\ql tract_high_schol_score\cell\qc 0.00374\cell\qc -0.00307\cell\qc 0.00413\cell\qc -0.00306\cell\qc 0.00359\cell\qc -0.00269\cell\qc 0.00378\cell\qc -0.00300\cell\row
+\ql \cell\qc (0.00585)\cell\qc (0.00538)\cell\qc (0.00583)\cell\qc (0.00542)\cell\qc (0.00583)\cell\qc (0.00539)\cell\qc (0.00583)\cell\qc (0.00540)\cell\row
+\ql tract_nata_respiratory_hazard\cell\qc 0.141***\cell\qc 0.0528***\cell\qc 0.134***\cell\qc 0.0500***\cell\qc 0.137***\cell\qc 0.0501***\cell\qc 0.137***\cell\qc 0.0501***\cell\row
+\ql \cell\qc (0.0236)\cell\qc (0.0182)\cell\qc (0.0241)\cell\qc (0.0186)\cell\qc (0.0238)\cell\qc (0.0180)\cell\qc (0.0238)\cell\qc (0.0181)\cell\row
+\ql p_higherthan_highschool\cell\qc -0.164*\cell\qc -0.157*\cell\qc -0.168*\cell\qc -0.160**\cell\qc -0.161*\cell\qc -0.188**\cell\qc -0.172*\cell\qc -0.164**\cell\row
+\ql \cell\qc (0.0896)\cell\qc (0.0804)\cell\qc (0.0901)\cell\qc (0.0807)\cell\qc (0.0898)\cell\qc (0.0804)\cell\qc (0.0908)\cell\qc (0.0814)\cell\row
+\ql gentrify_housevalue\cell\qc \cell\qc \cell\qc 0.0259\cell\qc 0.00244\cell\qc \cell\qc \cell\qc \cell\qc \cell\row
+\ql \cell\qc \cell\qc \cell\qc (0.0259)\cell\qc (0.0237)\cell\qc \cell\qc \cell\qc \cell\qc \cell\row
+\ql gentrify_rentburden\cell\qc \cell\qc \cell\qc \cell\qc \cell\qc 0.0104\cell\qc -0.0405\cell\qc \cell\qc \cell\row
+\ql \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc (0.0317)\cell\qc (0.0281)\cell\qc \cell\qc \cell\row
+\ql gentrify_income\cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc 0.0185\cell\qc 0.0199\cell\row
+\ql \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc (0.0395)\cell\qc (0.0334)\cell\row
+\ql Constant\cell\qc 0.201*\cell\qc 0.290***\cell\qc 0.216*\cell\qc 0.297***\cell\qc 0.206*\cell\qc 0.320***\cell\qc 0.215*\cell\qc 0.301***\cell\row
+\ql \cell\qc (0.113)\cell\qc (0.0944)\cell\qc (0.113)\cell\qc (0.0952)\cell\qc (0.113)\cell\qc (0.0943)\cell\qc (0.114)\cell\qc (0.0958)\cell\row
+\ql \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\qc \cell\row
+\ql Observations\cell\qc 495\cell\qc 495\cell\qc 495\cell\qc 495\cell\qc 495\cell\qc 495\cell\qc 495\cell\qc 495\cell\row
+\trowd\trgaph75\trleft-75\trqc\trbrdrb\brdrs\clbrdrb\brdrs\cellx4320\clbrdrb\brdrs\cellx6048\clbrdrb\brdrs\cellx7776\clbrdrb\brdrs\cellx9504\clbrdrb\brdrs\cellx11232\clbrdrb\brdrs\cellx12960\clbrdrb\brdrs\cellx14688\clbrdrb\brdrs\cellx16416\clbrdrb\brdrs\cellx18144
+\ql R-squared\cell\qc 0.156\cell\qc 0.095\cell\qc 0.156\cell\qc 0.094\cell\qc 0.154\cell\qc 0.097\cell\qc 0.155\cell\qc 0.095\cell\row
+\pard\qc
+Robust standard errors in parentheses\par
+*** p<0.01, ** p<0.05, * p<0.1\par
+}
