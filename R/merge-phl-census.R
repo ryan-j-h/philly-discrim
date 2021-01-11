@@ -1,27 +1,19 @@
----
-title: "Combine Philly and Census Data"
-author: "Ryan Hastings"
-date: "10/21/2020"
-output: html_document
----
+## Combine Discrimination and Census Data
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Load packages
 library(tidyverse); library(lmtest); library(sandwich); library(sf)
 ```
 
-```{r read-rds}
+# Read in data files
 phl <- read_rds("../data/philly_tracts.rds")
 
 census <- read_rds("../data/census.rds") %>% 
   mutate(fips_tract = as.numeric(paste0(statea, countya, tracta)))
-```
 
-```{r merge, message = F}
+# Merge files
 discrim_raw <- full_join(phl, census) %>% st_as_sf()
-```
 
-```{r}
+# Calculate variables for greater Philadelphia area
 discrim <- discrim_raw %>% 
   mutate(
     p_discrim = presp_white - presp_black ,
@@ -76,9 +68,8 @@ discrim <- discrim_raw %>%
       TRUE ~ 0
     )
   )
-```
 
-```{r}
+# Calculate variables for City of Philadelphia only
 discrim_city <- discrim_raw %>% 
   filter(countya == 101) %>% 
   mutate(
@@ -134,9 +125,8 @@ discrim_city <- discrim_raw %>%
       TRUE ~ 0
     )
   )
-```
 
-```{r}
+# Calculate variables for Philadelphia area excluding city
 discrim_suburb <- discrim_raw %>% 
   filter(countya != 101) %>% 
   mutate(
@@ -192,20 +182,12 @@ discrim_suburb <- discrim_raw %>%
       TRUE ~ 0
     )
   )
-```
 
-
-
-```{r}
+# Save as RDS and CSV files
 write_rds(discrim, "../data/discrim.rds")
 write_rds(discrim_city, "../data/discrim_city.rds")
 write_rds(discrim_suburb, "../data/discrim_suburb.rds")
-```
 
-
-
-
-```{r}
 discrim %>%
   as_tibble() %>% 
   select(-geometry) %>% 
@@ -218,13 +200,6 @@ discrim_city %>%
 discrim_suburb %>% 
   st_drop_geometry() %>% 
   write_csv("../data/discrim_suburb.csv")
-```
-
-```{r eval = F}
-test <- discrim %>%
-  as_tibble() %>% 
-  select(-geometry)
-```
 
 
 

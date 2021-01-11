@@ -1,28 +1,15 @@
----
-title: "Descriptive stats and charts"
-author: "Ryan Hastings"
-date: "10/22/2020"
-output: pdf_document
----
+# Summary Statistics and Visualizations
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
+## Load packages and data
 library(tidyverse); library(sf); library(knitr)
-```
-
-```{r echo = F}
 discrim <- read_rds("../data/discrim.rds")
 discrim_city <- read_rds("../data/discrim_city.rds")
 discrim_suburb <- read_rds("../data/discrim_suburb.rds")
 census <- read_rds("../data/census.rds")
-```
-
 
 ## Discrimination Summary Statistics
 
-CITY:
-```{r discrim-ss-city, echo =F}
+#### City
 ss_city <- discrim_city %>% 
   st_drop_geometry() %>% 
   summarize(
@@ -34,11 +21,7 @@ ss_city <- discrim_city %>%
     "SD Gap" = sd(p_discrim, na.rm = T)
   ) %>%   t()
 
-```
-
-
-SUBURBS:
-```{r discrim-ss-suburbs, echo = F}
+#### Suburbs
 ss_suburb <- discrim_suburb %>% 
   st_drop_geometry() %>% 
   summarize(
@@ -52,25 +35,21 @@ ss_suburb <- discrim_suburb %>%
 
 cbind(ss_city, ss_suburb) %>% 
   kable(format = "markdown", col.names = c("City", "Suburbs"))
-```
+
 
 ## Discrimination Maps
-```{r discrim-city-plot, echo=F, height = 6}
 plot(discrim["presp_white"], main = "Percent Response to White Inquirers")
 plot(discrim["presp_black"], main = "Percent Response to Black Inquirers")
 plot(discrim["p_discrim"], main = "Response Gap")
-```
 
-```{r discrim-sub-plot, echo = F, height = 6}
 plot(discrim_city["presp_white"], main = "Percent Response to White Inquirers")
 plot(discrim_city["presp_black"], main = "Percent Response to Black Inquirers")
 plot(discrim_city["p_discrim"], main = "Response Gap")
-```
 
 
 ## Gentrification Summary Statistics
 
-```{r nhood-ss-city, echo = F}
+#### City
 ss2_city <- discrim_city %>% 
   st_drop_geometry() %>%
   filter(!is.na(presp_white)) %>% 
@@ -81,9 +60,8 @@ ss2_city <- discrim_city %>%
     "Gentrify Value" = sum(gentrify_housevalue)
   ) %>% 
   t()
-```
 
-```{r nhood-ss-suburbs, echo = F}
+#### Suburbs
 ss2_suburb <- discrim_suburb %>% 
   st_drop_geometry() %>%
   filter(!is.na(presp_white)) %>% 
@@ -97,18 +75,14 @@ ss2_suburb <- discrim_suburb %>%
 
 cbind(ss2_city, ss2_suburb) %>% 
   kable(format = "markdown", col.names = c("City", "Suburbs"))
-```
-
-\newpage
 
 
-### Gentrify Composite
+### Demographic Characteristics BY Gentrify Composite
 
-
-```{r gentr-composite, echo = F, message = F, warning = F}
 backup_options <- options()
 options(scipen=999)
 
+#### City
 ss3_city <- discrim_city %>% 
   st_drop_geometry() %>%
   filter(!is.na(presp_white)) %>% 
@@ -132,6 +106,7 @@ ss3_city <- discrim_city %>%
 
 ss3_city
 
+#### Suburbs
 ss3_suburb <- discrim_suburb %>% 
   st_drop_geometry() %>%
   filter(!is.na(presp_white)) %>% 
@@ -154,17 +129,13 @@ ss3_suburb <- discrim_suburb %>%
   kable(format = "markdown")
 
 ss3_suburb
-```
 
+### Demographic Characteristics BY Gentrify Income
 
-\newpage
-
-### Gentrify Income
-
-```{r gentr-inc-ss, echo = F, message = F, warning = F}
 backup_options <- options()
 options(scipen=999)
 
+#### City
 ss4_city <- discrim_city %>% 
   st_drop_geometry() %>%
   filter(!is.na(presp_white)) %>% 
@@ -188,6 +159,7 @@ ss4_city <- discrim_city %>%
 
 ss4_city
 
+#### Suburbs
 ss4_suburb <- discrim_suburb %>% 
   st_drop_geometry() %>%
   filter(!is.na(presp_white)) %>% 
@@ -210,15 +182,12 @@ ss4_suburb <- discrim_suburb %>%
   kable(format = "markdown")
 
 ss4_suburb
-```
 
-\newpage
-
-### Gentrify Value
-
-```{r gentr-hv-ss, echo = F, message = F, warning = F}
+### Demographic Characteristics BY Gentrify House Value
 backup_options <- options()
 options(scipen=999)
+
+#### City
 
 ss5_city <- discrim_city %>% 
   st_drop_geometry() %>%
@@ -243,6 +212,8 @@ ss5_city <- discrim_city %>%
 
 ss5_city
 
+#### Suburbs
+
 ss5_suburb <- discrim_suburb %>% 
   st_drop_geometry() %>%
   filter(!is.na(presp_white)) %>% 
@@ -265,24 +236,20 @@ ss5_suburb <- discrim_suburb %>%
   kable(format = "markdown")
 
 ss5_suburb
-```
 
-##Gentrification Maps
 
-```{r gentr-maps-city, echo = F}
+## Gentrification Maps
+
 plot(discrim_city["gentrify_composite"])
 plot(discrim_city["gentrify_income"])
 plot(discrim_city["gentrify_housevalue"])
-```
 
-```{r gentr-maps-suburbs, echo = F}
 plot(discrim_suburb["gentrify_composite"])
 plot(discrim_suburb["gentrify_income"])
 plot(discrim_suburb["gentrify_housevalue"])
-```
 
-## Other
-```{r eval = F, echo = F}
+
+## Other (Miscellaneous or Not Used)
 hist(discrim$perc_change_value)
 median(discrim$perc_change_value, na.rm=T)
 
@@ -296,18 +263,12 @@ hist(discrim$change_perc_owner)
 median(discrim$change_perc_owner, na.rm=T)
 
 median(discrim$med_hh_inc_2000, na.rm=T)
-```
 
-
-```{r eval = F, echo = F}
 discrim %>%
   group_by(gentrify) %>% 
   summarize(mean(presp_black, na.rm = T),
             mean(presp_white, na.rm = T))
-```
 
-
-```{r eval = F, echo = F}
 ggplot(discrim)+
   geom_histogram(aes(x = presp_black), binwidth = 0.1)+
   facet_wrap(vars(gentrify)) +
@@ -317,7 +278,6 @@ ggplot(discrim)+
   geom_histogram(aes(x = presp_white), binwidth = 0.1)+
   facet_wrap(vars(gentrify)) +
   theme_bw()
-```
 
 
 
